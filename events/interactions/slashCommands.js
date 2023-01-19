@@ -1,4 +1,5 @@
-const { ChatInputCommandInteraction } = require('discord.js')
+const { ChatInputCommandInteraction } = require('discord.js');
+const { developerID } = require('../../config.json');
 
 module.exports = {
     name: 'interactionCreate',
@@ -14,7 +15,7 @@ module.exports = {
             content: 'Bu komut kullanılmamaktadır',
             ephemeral: true
         });
-        if (command.developer && interaction.user.id !== '680846454935650318')
+        if (command.developer && interaction.user.id !== developerID)
             return interaction.reply({
                 content: 'Bu komutu yalnızca botun geliştiricisi kullanabilir',
                 ephemeral: true
